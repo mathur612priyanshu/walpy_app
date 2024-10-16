@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wallpaper_manager_plus/wallpaper_manager_plus.dart';
-// import 'package:wallpaper_manager_flutter/wallpaper_manager_flutter.dart';
-// import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 import 'package:walpy_app/views/widgets/customAppBar.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
