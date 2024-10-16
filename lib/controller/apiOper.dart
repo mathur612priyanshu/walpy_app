@@ -76,11 +76,11 @@ class ApiOperations {
       "Flowers"
     ];
     categoryModelList.clear();
-    final _random = Random();
+    final random = Random();
 
     for (var catName in categoryNames) {
       List<PhotosModel> searchResults = await searchWallpapers(catName);
-      PhotosModel photoModel = searchResults[_random.nextInt(11)];
+      PhotosModel photoModel = searchResults[random.nextInt(11)];
       // print("IMG SRC IS HERE");
       // print(photoModel.imgSrc);
       categoryModelList

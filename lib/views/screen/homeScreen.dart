@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
           centerTitle: true,
           elevation: 0.0,
           backgroundColor: Colors.white,
-          title: CustomAppBar(
+          title: const CustomAppBar(
             word1: "Walpy", // First part of the app title
             word2: "App", // Second part of the app title
           ),
@@ -85,19 +85,20 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 20.h), // Responsive vertical spacing
 
             // Horizontal list of categories or shimmer effect while loading
-            Container(
+            SizedBox(
               height: 50.h,
               width: MediaQuery.of(context).size.width,
               child: isLoadingcat
                   ? Shimmer.fromColors(
+                      // Shimmer effect while categories are loading
+                      baseColor: Colors.grey.shade300,
+                      highlightColor: Colors.grey.shade100,
                       // Shimmer effect while categories are loading
                       child: Container(
                         width: double.infinity,
                         height: 20.h,
                         color: Colors.red,
                       ),
-                      baseColor: Colors.grey.shade300,
-                      highlightColor: Colors.grey.shade100,
                     )
                   : ListView.builder(
                       scrollDirection: Axis.horizontal,

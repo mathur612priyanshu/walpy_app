@@ -10,7 +10,7 @@ class Search_Bar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         color: Colors.black12,
         border: Border.all(color: Colors.black45),
@@ -34,7 +34,7 @@ class Search_Bar extends StatelessWidget {
                   );
                 }
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "Search Wallpaper",
                 errorBorder: InputBorder.none,
                 focusedErrorBorder: InputBorder.none,
@@ -55,7 +55,7 @@ class Search_Bar extends StatelessWidget {
                 );
               }
             },
-            child: Icon(Icons.search),
+            child: const Icon(Icons.search),
           ),
         ],
       ),

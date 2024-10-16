@@ -39,10 +39,12 @@ dependencies:
   # image_downloader: ^0.31.0
   get: any
   open_file: ^3.3.2
-  flutter_wallpaper_manager: ^0.0.4
+  # flutter_wallpaper_manager: ^0.0.4
   flutter_cache_manager: ^3.4.1
   flutter_screenutil: ^5.9.3
   shimmer: ^3.0.0
+  # wallpaper_manager_flutter: ^0.0.2
+  wallpaper_manager_plus: ^0.0.3
 
 dev_dependencies:
   flutter_test:

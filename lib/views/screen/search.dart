@@ -10,7 +10,7 @@ class SearchScreen extends StatefulWidget {
   final String query; // The search query passed from the previous screen.
 
   // Constructor to initialize the query.
-  SearchScreen({super.key, required this.query});
+  const SearchScreen({super.key, required this.query});
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
@@ -35,7 +35,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     // Show a loading indicator if search results are not yet available.
     if (searchResults.isEmpty) {
-      return Scaffold(
+      return const Scaffold(
         body: Center(
           child: CircularProgressIndicator(),
         ),
@@ -52,7 +52,7 @@ class _SearchScreenState extends State<SearchScreen> {
           centerTitle: true,
           elevation: 0.0,
           backgroundColor: Colors.white,
-          title: CustomAppBar(
+          title: const CustomAppBar(
             word1: 'Walpy', // First part of the app title.
             word2: 'App', // Second part of the app title.
           ),
@@ -74,7 +74,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     MediaQuery.of(context).size.height, // Responsive height.
                 child: GridView.builder(
                   physics:
-                      BouncingScrollPhysics(), // Bouncing effect when scrolling.
+                      const BouncingScrollPhysics(), // Bouncing effect when scrolling.
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisExtent: 400.h, // Height of each grid item.
                     crossAxisCount: 2, // Two columns in the grid.

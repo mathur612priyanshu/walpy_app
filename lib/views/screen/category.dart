@@ -9,7 +9,8 @@ class CategoryScreen extends StatefulWidget {
   final String catName;
   final String catImgUrl;
 
-  CategoryScreen({super.key, required this.catImgUrl, required this.catName});
+  const CategoryScreen(
+      {super.key, required this.catImgUrl, required this.catName});
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
@@ -42,13 +43,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
         centerTitle: true,
         elevation: 0.0,
         backgroundColor: Colors.white,
-        title: CustomAppBar(
+        title: const CustomAppBar(
           word1: "Walpy", // First part of the app title
           word2: "App", // Second part of the app title
         ),
       ),
       body: isLoading
-          ? Center(
+          ? const Center(
               child:
                   CircularProgressIndicator(), // Show loading indicator while fetching data
             )
@@ -106,7 +107,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         horizontal: 10.w), // Responsive margin
                     height: 700.h,
                     child: GridView.builder(
-                      physics: BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         mainAxisExtent: 400.h, // Height of each grid item
                         crossAxisCount: 2, // Number of columns in the grid

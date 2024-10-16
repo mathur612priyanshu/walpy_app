@@ -7,7 +7,7 @@ class CatBlock extends StatelessWidget {
   final String categoryImgSrc; // The URL of the category image.
 
   // Constructor to initialize the category name and image source.
-  CatBlock({
+  const CatBlock({
     super.key,
     required this.categoryName,
     required this.categoryImgSrc,
@@ -62,7 +62,7 @@ class CatBlock extends StatelessWidget {
               left: 30.w, // Responsive left positioning.
               child: Text(
                 categoryName, // Category name text.
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white, // White text color for visibility.
                   fontWeight: FontWeight.w600, // Semi-bold font weight.
                 ),

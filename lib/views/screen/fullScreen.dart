@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
+import 'package:wallpaper_manager_plus/wallpaper_manager_plus.dart';
+// import 'package:wallpaper_manager_flutter/wallpaper_manager_flutter.dart';
+// import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 import 'package:walpy_app/views/widgets/customAppBar.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 class FullScreen extends StatefulWidget {
-  final String imgUrl;
+  final imgUrl;
 
-  FullScreen({super.key, required this.imgUrl});
+  const FullScreen({super.key, required this.imgUrl});
 
   @override
   State<FullScreen> createState() => _FullScreenState();
@@ -16,22 +19,23 @@ class FullScreen extends StatefulWidget {
 class _FullScreenState extends State<FullScreen> {
   bool alert = false;
 
-  Future<void> setWallpaper(String imgUrl) async {
+  Future<void> _setwallpaper(String imgUrl) async {
+    final file = await DefaultCacheManager().getSingleFile(imgUrl);
+    int location = WallpaperManagerPlus.bothScreens;
     try {
-      var file = await DefaultCacheManager().getSingleFile(imgUrl);
-      int location = WallpaperManager.BOTH_SCREEN;
-      bool result =
-          await WallpaperManager.setWallpaperFromFile(file.path, location);
-
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(result
-            ? "Wallpaper set successfully!"
-            : "Failed to set wallpaper."),
-      ));
+      final result = await WallpaperManagerPlus().setWallpaper(file, location);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(result ?? ''),
+        ),
+      );
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Error occurred while setting wallpaper."),
-      ));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Error Setting Wallpaper'),
+        ),
+      );
+      debugPrint(e.toString());
     }
   }
 
@@ -42,7 +46,7 @@ class _FullScreenState extends State<FullScreen> {
         centerTitle: true,
         elevation: 0.0,
         backgroundColor: Colors.white,
-        title: CustomAppBar(
+        title: const CustomAppBar(
           word1: "Walpy",
           word2: "App",
         ),
@@ -95,20 +99,20 @@ class _FullScreenState extends State<FullScreen> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            setWallpaper(widget.imgUrl);
+                            _setwallpaper(widget.imgUrl);
                             setState(() {
                               alert = false;
                             });
                           },
-                          child: Text(
-                            "Yes",
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 16.sp),
-                          ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orangeAccent,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 20.w, vertical: 10.h),
+                          ),
+                          child: Text(
+                            "Yes",
+                            style:
+                                TextStyle(color: Colors.black, fontSize: 16.sp),
                           ),
                         ),
                       ],

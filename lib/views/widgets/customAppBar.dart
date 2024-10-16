@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
   final String word2;
 
   /// Constructor to initialize the words displayed in the AppBar.
-  CustomAppBar({super.key, required this.word1, required this.word2});
+  const CustomAppBar({super.key, required this.word1, required this.word2});
 
   @override
   Widget build(BuildContext context) {
