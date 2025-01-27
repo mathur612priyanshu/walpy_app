@@ -1,16 +1,17 @@
 # walpy_app
 
-A new Flutter project.
+# HomeScreen
+![WhatsApp Image 2024-12-24 at 22 23 49](https://github.com/user-attachments/assets/a483d391-3b1f-4025-9136-e00e43ff0b3f)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# Category Inside View
+![WhatsApp Image 2024-12-24 at 22 23 49 (1)](https://github.com/user-attachments/assets/e035b0d5-4b02-4102-bf80-0a73ca05381c)
 
-A few resources to get you started if this is your first Flutter project:
+# Search View
+![WhatsApp Image 2024-12-24 at 22 23 48](https://github.com/user-attachments/assets/2b3cfbda-d68f-46d6-934c-d0cd4809f4f8)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# wallpaper Expanded Screen
+![WhatsApp Image 2024-12-24 at 22 23 48 (1)](https://github.com/user-attachments/assets/6fac5e34-dd90-4c97-9541-36040ef15555)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# set Wallpaper view
+![WhatsApp Image 2024-12-24 at 22 23 48 (2)](https://github.com/user-attachments/assets/b1dbbf69-7a21-471e-aa84-5f213d905872)
